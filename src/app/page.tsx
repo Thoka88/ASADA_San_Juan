@@ -94,7 +94,7 @@ export default function Home() {
           <div className="hero-shade" />
           <div className="container hero-content">
             <span className="eyebrow hero-eyebrow"><span className="eyebrow-line" /> Barú · Pérez Zeledón</span>
-            <h1 id="hero-title">El agua que<br /><em>nos une.</em></h1>
+            <h1 id="hero-title">El agua que<br /><em>nos une más.</em></h1>
             <p>Protegemos nuestro recurso hídrico.<br className="desktop-break" /> Cuidamos lo que compartimos.</p>
             <Link className="button button-primary hero-button" href="/consulta">Consultar mi recibo <ArrowRight size={19} /></Link>
             <a className="hero-scroll" href="#compromiso"><span>Conocé nuestra labor</span><ArrowDown size={15} /></a>
