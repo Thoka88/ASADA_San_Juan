@@ -1,4 +1,4 @@
-# ASADA San Juan de Dios.
+# ASADA San Juan de Dios..
 
 Landing pública hecha con Next.js, React y TypeScript. No utiliza base de datos ni contiene credenciales.
 
