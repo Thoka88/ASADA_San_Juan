@@ -945,6 +945,11 @@ summary:focus-visible {
 .admin-header-title strong { font: 700 15px var(--display); }
 .admin-session-badge { display: flex; align-items: center; gap: 8px; margin-left: auto; color: #1a759f; font-size: 12px; }
 .admin-menu-button { display: none; }
+.admin-sidebar-toggle { display: grid; width: 38px; height: 38px; flex: 0 0 38px; place-items: center; border: 1px solid #184e7720; border-radius: 6px; background: #fff; color: var(--ink); cursor: pointer; }
+.admin-sidebar-toggle:hover, .admin-menu-button:hover { border-color: #52b69a; color: #218c78; }
+.admin-sidebar.is-hidden { transform: translateX(-102%); transition: transform .22s ease; }
+.admin-shell.is-sidebar-hidden .admin-workspace { margin-left: 0; }
+.admin-workspace { transition: margin-left .22s ease; }
 .admin-main { min-height: calc(100svh - 76px); padding: clamp(24px, 4vw, 56px); }
 .admin-placeholder-page { min-height: calc(100svh - 188px); padding: 22px; background: transparent; }
 .admin-sidebar-backdrop { display: none; }
@@ -955,12 +960,37 @@ summary:focus-visible {
   .admin-workspace { margin-left: 0; }
   .admin-header { height: 68px; padding-inline: 20px; }
   .admin-menu-button { display: grid; width: 40px; height: 40px; place-items: center; border: 1px solid #184e7720; border-radius: 6px; background: #fff; color: var(--ink); cursor: pointer; }
+  .admin-sidebar-toggle { display: none; }
   .admin-main { min-height: calc(100svh - 68px); padding: 24px 20px; }
   .admin-placeholder-page { min-height: calc(100svh - 116px); padding: 12px; }
 }
 @media (prefers-reduced-motion: reduce) { .admin-sidebar { transition: none; } }
 
+.dashboard-heading-actions { display: flex; align-items: center; gap: 10px; }
+.dashboard-home-link { display: inline-flex; min-height: 40px; align-items: center; justify-content: center; gap: 7px; padding: 0 13px; border: 1px solid #184e7722; border-radius: 7px; background: #fff; color: #266a70; font-size: 10px; font-weight: 700; white-space: nowrap; }
+.dashboard-home-link:hover { border-color: #52b69a; background: #eff8f4; color: #184e77; }
+@media (max-width: 800px) { .admin-sidebar.is-hidden { transform: translateX(-102%); }.admin-sidebar.is-hidden.is-open { transform: translateX(0); } }
+@media (max-width: 600px) { .dashboard-heading-actions { width: 100%; flex-wrap: wrap; }.dashboard-home-link { flex: 1; }.dashboard-date { flex: 1; } }
+
 /* Administrative dashboard */
+.admin-sidebar { overflow-y: auto; }
+.admin-navigation { display: grid; gap: 14px; padding-bottom: 16px; }
+.admin-navigation-group { display: grid; gap: 4px; }
+.admin-navigation-group-title { margin: 0 10px 3px; color: #a9d8bd; font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.admin-navigation-link { min-width: 0; }
+.admin-navigation-link.is-active { background: #52b69a26; box-shadow: inset 3px 0 #52b69a; color: #fff; }
+.admin-navigation-icon { flex: 0 0 18px; color: #b6d9d5; }
+.admin-navigation-link.is-active .admin-navigation-icon { color: #68d2b1; }
+.admin-navigation-link { display: grid; grid-template-columns: 18px minmax(0, 1fr); column-gap: 12px; row-gap: 2px; height: auto; min-height: 42px; padding-block: 7px; }
+.admin-navigation-link > span { min-width: 0; }
+.admin-navigation-icon { grid-column: 1; grid-row: 1 / span 2; margin-top: 1px; }
+.admin-navigation-coming-soon { display: block; grid-column: 2; color: #a9d8bd; font-size: 8px; line-height: 1.2; }
+.admin-breadcrumbs { display: flex; align-items: center; gap: 8px; margin: 0 0 24px; color: #9aa8aa; font-size: 10px; }
+.admin-breadcrumbs a { color: #548f87; }
+.admin-breadcrumbs a:hover { color: #184e77; text-decoration: underline; }
+.admin-breadcrumbs [aria-current="page"] { color: #184e77; font-weight: 700; }
+.section-coming-soon-label { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 14px; color: #398c7a; font-size: 10px; font-weight: 700; }
+.section-placeholder-card > p { max-width: 520px; line-height: 1.7; }
 .admin-navigation { gap: 4px; }
 .admin-navigation-link { min-height: 42px; }
 .dashboard-page, .section-page { width: min(1180px, 100%); margin-inline: auto; }

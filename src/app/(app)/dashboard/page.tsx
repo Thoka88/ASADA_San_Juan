@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Activity, ArrowDownRight, ArrowRight, ArrowUpRight, Banknote, Droplet, FileText, Gauge, UsersRound } from "lucide-react";
+import { Activity, ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, Banknote, Droplet, FileText, Gauge, UsersRound } from "lucide-react";
 
 const metrics = [
   { label: "Abonados activos", value: "1,248", note: "+ 18 este mes", icon: UsersRound, trend: "up" },
@@ -24,7 +24,10 @@ export default function DashboardPage() {
           <h1>Dashboard</h1>
           <p>Resumen general de la operación del acueducto.</p>
         </div>
-        <div className="dashboard-date">Ciclo actual <strong>Octubre 2026</strong></div>
+        <div className="dashboard-heading-actions">
+          <Link className="dashboard-home-link" href="/"><ArrowLeft aria-hidden="true" size={15} /> Volver al inicio</Link>
+          <div className="dashboard-date">Ciclo actual <strong>Octubre 2026</strong></div>
+        </div>
       </div>
 
       <div className="dashboard-demo-note"><span aria-hidden="true">i</span> Vista de ejemplo: las cifras son ilustrativas y deben conectarse con los datos reales del sistema.</div>
